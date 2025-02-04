@@ -2,12 +2,16 @@ import React, { useState, useEffect, useRef } from 'react'
 import { fetchAssets, Clip } from '../api/clips';
 
 // onHover info - asset type, size, dimensions "jpg - 3MB - 320 x 220"
+interface Pagination {
+    hasMore: boolean;
+    cursor: null | string;
+}
 
 const Assets = () => {
   const [assets, setAssets] = useState({
     total: 0,
     clips: [] as Clip[],
-    pagination: { cursor: null, hasMore: true },
+    pagination: { cursor: null, hasMore: true } as Pagination,
   });
 
   const [loading, setLoading] = useState(false);
