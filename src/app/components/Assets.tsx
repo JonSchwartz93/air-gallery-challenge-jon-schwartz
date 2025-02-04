@@ -63,7 +63,6 @@ const Assets = () => {
     setLoading(false);
   };
 
-  console.log('the assets', assets);
     return (
       <div className='mt-4'>
           <h1>Assets ({assets.total})</h1>
